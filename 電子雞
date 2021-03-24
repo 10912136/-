@@ -1,0 +1,115 @@
+import random
+class gg():
+    def __init__(self,name,mood,hunger,sleep):
+        self.name = name
+        self.mood = mood
+        self.hunger = hunger
+        self.sleep = sleep
+g = gg(input("請輸入小雞的名子"),5,5,5)
+print("遊戲規則:任何指數達到10以上(含10)或0以下(含0)代表遊戲結束(指數越高狀態越好)")
+a = 0
+b = 0
+c = 0
+A = 1
+while 0 < g.mood <10:
+    Z = random.randint(-1,1)
+    Y = random.randint(-1,1)
+    X = random.randint(-1,1)
+    print("養育第",A,"天")
+    if g.mood > 5:
+        print("今天",g.name,"心情不錯，可以不理它")
+    elif g.mood < 5:
+        print("今天",g.name,"心情不好，請和它玩耍")
+    elif g.mood == 5:
+        print("今天",g.name,"心情不上不下，可以看你心情對待它")
+    x = int(input("如果你想要和它玩耍請輸入1，不想請輸入0:"))
+    a += 0.5
+    if x == 1:
+        print("好開心下次再和",g.name,"一起玩吧!")
+        g.mood = g.mood + a + Z
+    elif x ==0:
+        print("好難過都不陪",g.name,"玩")
+        g.mood = g.mood - a + Z
+    else :
+        print("叫你亂按，耖~死了!!")
+        break
+    if Z > 0 :
+        print("今天發生莫名其妙的好事小雞的心情指數增加了1點")
+        print("第",A,"天心情指數",g.mood)
+    elif Z < 0:
+        print("今天發生莫名其妙的壞事小雞的心情指數減少了1點")
+        print("第",A,"天心情指數",g.mood)
+    else :
+        print("第",A,"天心情指數",g.mood)
+    if g.mood >= 10:
+        print("謝謝你陪",g.name,"玩，",g.name,"心情很好，可以不用再陪",g.name,"玩了")
+        break
+    elif g.mood <= 0:
+        print(g.name,"太難過，活不下去了QAQ")
+        break
+    if 0 < g.hunger < 10:
+        if g.hunger > 5:
+            print("今天",g.name,"肚子不餓，可以不理它")
+        elif g.hunger < 5:
+            print("今天",g.name,"肚子很餓，請給它餵食")
+        elif g.hunger == 5:
+            print("今天",g.name,"肚子不怎麼餓，可以看你心情餵它")
+        y = int(input("如果你想要餵食它請輸入1，不想請輸入0:"))
+        b += 0.5
+        if y == 1:
+            print("謝謝你餵",g.name,"吃東西，",g.name,"感覺自己長大了一些")
+            g.hunger = g.hunger + b + Y
+        elif y == 0:
+            print("好餓阿~都不餵",g.name,"吃東西")
+            g.hunger = g.hunger - b + Y
+        else :
+            print("叫你亂按，耖~死了!!")
+            break
+        if Y > 0 :
+            print("今天莫名其妙的小雞找到其他食物可以吃，飢餓指數增加了1點")
+            print("第",A,"天飢餓指數",g.hunger)
+        elif Y < 0:
+            print("今天莫名其妙的小雞飼料給少了，飢餓指數減少了1點")
+            print("第",A,"天飢餓指數",g.hunger)
+        else :
+            print("第",A,"天飢餓指數",g.hunger)
+        if g.hunger >= 10:
+            print("謝謝你把",g.name,"給餵大了，以後",g.name,"可以自己找吃的了")
+            break
+        elif g.hunger <= 0:
+            print(g.name,"太餓了，餓死了QWQ")
+            break
+    if 0 < g.sleep < 10:
+        if g.sleep > 5:
+            print("今天",g.name,"睡眠品質很好，可以不用幫助它入睡")
+        elif g.sleep < 5:
+            print("今天",g.name,"睡眠品質不好，請幫助它入睡")
+        elif g.sleep == 5:
+            print("今天",g.name,"睡眠品質一般，可以看你要不要幫助它入睡")
+        z = int(input("如果你想要幫助它入睡請輸入1，不想請輸入0:"))
+        c += 0.5
+        if z == 1:
+            print("謝謝幫助",g.name,"入睡，",g.name,"感覺睡得很好")
+            g.sleep = g.sleep + c + X
+        elif z == 0:
+            print("好累阿",g.name,"感覺沒睡好")
+            g.sleep = g.sleep - c + X
+        else :
+            print("叫你亂按，耖~死了!!")
+            break
+        if X > 0 :
+            print("今天神奇的小雞非常熟睡，睡眠指數增加了1點")
+            print("第",A,"天睡眠指數",g.sleep)
+        elif X < 0:
+            print("今天莫名其妙的小雞被驚醒了，睡眠指數減少了1點")
+            print("第",A,"天睡眠指數",g.sleep)
+        else :
+            print("第",A,"天睡眠指數",g.sleep)
+        if g.sleep >= 10:
+            print("謝謝你讓",g.name,"有好的睡眠，以後",g.name,"可以自己睡了")
+            break
+        elif g.sleep <= 0:
+            print(g.name,"太累了，好幾天沒睡好，累死了QVQ")
+            break        
+    A += 1
+
